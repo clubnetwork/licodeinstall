@@ -21,9 +21,17 @@ UBLIC_IP=192.168.0.113 MIN_PORT=30000; MAX_PORT=30050; sudo docker run --name li
 #apt-get install vim curl wget git
 # vi ~/.wgetrc
 proxy=http://192.168.0.163:10809
+#vi ~/.curlrc
+#socks5
+socks5 = "127.0.0.1:1080"
+#或者HTTP代理
+proxy = "127.0.0.1:9999"
 
 #scripts/installUbuntuDeps
 modify script file
 licode mongodb Cannot change ownership to uid 1000, gid 1000
 tar --no-same-owner
+
+tar --no-same-owner -zxvf /sfu/licode/scripts/../build/libdeps/mongodb-linux-x86_64-ubuntu2004-4.4.4.tgz -C /sfu/licode/scripts/../build/libdeps
+
 ```
