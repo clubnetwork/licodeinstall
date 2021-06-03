@@ -1,4 +1,7 @@
 # licodeinstall
+https://github.com/lynckia/licode
+
+https://licode.readthedocs.io/en/stable/docker/
 
 ## install ubuntu development docker
 ### data-root
