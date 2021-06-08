@@ -56,6 +56,10 @@ config.nuve.superserviceKey = '1168'; // default value: ''
 //note, this won't work with all versions of libnice. With 0 all the available ports are used
 config.erizo.minport = 30000; // default value: 0
 config.erizo.maxport = 30050; // default value: 0
+
+sudo docker ps
+860e2df40368   1edc79a7ed54   "bash"        3 days ago   Up 3 days   0.0.0.0:3001->3001/tcp, :::3001->3001/tcp, 0.0.0.0:3300->3300/tcp, :::3300->3300/tcp, 0.0.0.0:8080->8080/tcp, :::8080->8080/tcp, 0.0.0.0:30000-30050->30000-30050/udp, :::30000-30050->30000-30050/udp   licodedev
+
 ```
 - public IP, turn server and SSL
 ```
@@ -99,5 +103,17 @@ config.erizo.turnport = 3478; // default value: 0
 config.erizo.turnusername = 'XXXX';
 config.erizo.turnpass = 'XXXXX';
 config.erizo.networkinterface = 'eth0'; //default value: ''
+
+```
+
+### kill process
+```
+root     14645     1  2 10:05 pts/0    00:00:00 node nuve.js
+root     14949     1  1 10:05 pts/0    00:00:00 node erizoController.js
+root     15248     1  0 10:05 pts/0    00:00:00 node erizoAgent.js
+root     15255 15248  1 10:05 ?        00:00:00 node ./../erizoJS/erizoJS.js 7df541ba-04dd-88e7-ca65-bf90cd686c1f 172.17.0.2 192.168.0.172 -d
+root     15589 15304  3 10:06 pts/0    00:00:00 node basicServer.js
+
+#ps -ef | grep node | grep \.js | awk '{print "kill "$2}' | sh
 
 ```
