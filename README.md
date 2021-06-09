@@ -153,6 +153,15 @@ root     15589 15304  3 10:06 pts/0    00:00:00 node basicServer.js
 
 ## 3. Disk usage
 ```
+# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        3.9G     0  3.9G   0% /dev
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           3.9G  996K  3.9G   1% /run
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/vda1        40G   29G  8.9G  77% /
+tmpfs           783M     0  783M   0% /run/user/0
+overlay          40G   29G  8.9G  77% /var/lib/docker/overlay2/86296fb49a2fbce60bdd5762dd2dda6abf43262386f76b32e95a0421cf2d877c/merged
 # du -h -d 1
 16K     ./plugins
 4.0K    ./swarm
