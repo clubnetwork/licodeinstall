@@ -150,3 +150,20 @@ root     15589 15304  3 10:06 pts/0    00:00:00 node basicServer.js
 #ps -ef | grep node | grep \.js | awk '{print "kill "$2}' | sh
 
 ```
+
+## 3. Disk usage
+```
+# du -h -d 1
+16K     ./plugins
+4.0K    ./swarm
+4.0K    ./tmp
+352K    ./image
+4.0K    ./runtimes
+80K     ./network
+88K     ./buildkit
+2.7G    ./overlay2
+28K     ./volumes
+2.2M    ./containers
+4.0K    ./trust
+2.7G    .
+```
