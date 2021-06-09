@@ -5,8 +5,17 @@
 
 - https://licode.readthedocs.io/en/stable/docker/
 
-## install ubuntu development docker
-### data-root
+## 1. install ubuntu in docker for development
+### 1.1 install docker on centos 
+```
+  sudo yum update
+  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  yum list docker-ce --showduplicates | sort -r
+  sudo yum install docker-ce
+  sudo systemctl start docker
+  sudo systemctl enable docker
+```
+### 1.2 change data-root if needed 
 ```
 vi /etc/docker/daemon.json
 {
@@ -16,7 +25,7 @@ vi /etc/docker/daemon.json
 }
 only needed if the diretory is mounted by NFS, should use "storage-driver": "devicemapper", 
 ```
-### docker container 
+### 1.3 ubuntu docker container 
 ```
 get localhost IP, also port and directory map
 PUBLIC_IP=$(ifconfig eth0 | awk '/ *inet /{print $2}') MIN_PORT=30000; MAX_PORT=30050; sudo docker run --name licodedev -p  3000:3000 -p $MIN_PORT-$MAX_PORT:$MIN_PORT-$MAX_PORT/udp -p 3001:3001 -p 3002:3002 -p 8030:8030 -e "MIN_PORT=$MIN_PORT" -e "MAX_PORT=$MAX_PORT" -e "PUBLIC_IP=$PUBLIC_IP" -e "NETWORK_INTERFACE=eth0" -t -i -v /data/sfu:/sfu ubuntu /bin/bash
@@ -25,7 +34,7 @@ PUBLIC_IP=$(ifconfig eth0 | awk '/ *inet /{print $2}') MIN_PORT=30000; MAX_PORT=
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 ubuntu       latest    7e0aa2d69a15   6 weeks ago   72.7MB
 ```
-### open port on the host 
+### 1.4 open port on the host 
 ```
 # firewall-cmd --add-port=3000/tcp --permanent
 # firewall-cmd --add-port=3001/tcp --permanent
@@ -35,8 +44,8 @@ ubuntu       latest    7e0aa2d69a15   6 weeks ago   72.7MB
 # firewall-cmd --query-port=3000/tcp
 # firewall-cmd --reload
 ```
-## install licode
-### install Dependencies
+## 2. install licode
+### 2.1 install Dependencies
 ```
 #apt-get update
 #apt-get install vim curl wget git net-tools -y
@@ -57,7 +66,7 @@ tar --no-same-owner -zxvf /sfu/licode/scripts/../build/libdeps/mongodb-linux-x86
 
 ```
 
-### install Licode
+### 2.2 install Licode
 ```
 #./scripts/installNuve.sh 
 # ./scripts/installErizo.sh 
@@ -126,11 +135,11 @@ config.erizo.turnpass = 'XXXXX';
 config.erizo.networkinterface = 'eth0'; //default value: ''
 
 ```
-### install BasicExamples
+### 2.3 install BasicExamples
 ```
 # ./scripts/installBasicExample.sh 
 ```
-### kill process
+### 2.4 kill process
 ```
 root     14645     1  2 10:05 pts/0    00:00:00 node nuve.js
 root     14949     1  1 10:05 pts/0    00:00:00 node erizoController.js
