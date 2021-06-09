@@ -19,11 +19,16 @@ only needed if the diretory is mounted by NFS, should use "storage-driver": "dev
 ### docker container 
 ```
 get localhost IP, also port and directory map
-PUBLIC_IP=$(ifconfig eth0 | awk '/ *inet /{print $2}') MIN_PORT=30000; MAX_PORT=30050; sudo docker run --name licodedev -p  3000:3000 -p $MIN_PORT-$MAX_PORT:$MIN_PORT-$MAX_PORT/udp -p 3001:3001 -p 3002:3002 -p 8030:8030 -e "MIN_PORT=$MIN_PORT" -e "MAX_PORT=$MAX_PORT" -e "PUBLIC_IP=$PUBLIC_IP" -e "NETWORK_INTERFACE=eth0" -t -i -v /data/sfu:/sfu ubuntu /bin/bash```
+PUBLIC_IP=$(ifconfig eth0 | awk '/ *inet /{print $2}') MIN_PORT=30000; MAX_PORT=30050; sudo docker run --name licodedev -p  3000:3000 -p $MIN_PORT-$MAX_PORT:$MIN_PORT-$MAX_PORT/udp -p 3001:3001 -p 3002:3002 -p 8030:8030 -e "MIN_PORT=$MIN_PORT" -e "MAX_PORT=$MAX_PORT" -e "PUBLIC_IP=$PUBLIC_IP" -e "NETWORK_INTERFACE=eth0" -t -i -v /data/sfu:/sfu ubuntu /bin/bash
+
+# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    7e0aa2d69a15   6 weeks ago   72.7MB
+```
 ### inside docker
 ```
 #apt-get update
-#apt-get install vim curl wget git
+#apt-get install vim curl wget git net-tools -y
 # vi ~/.wgetrc
 proxy=http://192.168.0.163:10809
 #vi ~/.curlrc
