@@ -36,7 +36,7 @@ ubuntu       latest    7e0aa2d69a15   6 weeks ago   72.7MB
 # firewall-cmd --reload
 ```
 ## install licode
-### inside docker
+### install Dependencies
 ```
 #apt-get update
 #apt-get install vim curl wget git net-tools -y
@@ -57,6 +57,11 @@ tar --no-same-owner -zxvf /sfu/licode/scripts/../build/libdeps/mongodb-linux-x86
 
 ```
 
+### install Licode
+```
+#./scripts/installNuve.sh 
+# ./scripts/installErizo.sh 
+```
 #### Attentions
 - scripts/installNuve.sh will change the licode_config.js every time with a new new service ID and service KEY
 - erizo will use the ID and KEY to access nuve. If not correct, the basicExample will stuck at the N.API call and will not show listen on port 30001
@@ -121,7 +126,8 @@ config.erizo.turnpass = 'XXXXX';
 config.erizo.networkinterface = 'eth0'; //default value: ''
 
 ```
-
+### install BasicExamples
+# ./scripts/installBasicExamples.sh 
 ### kill process
 ```
 root     14645     1  2 10:05 pts/0    00:00:00 node nuve.js
