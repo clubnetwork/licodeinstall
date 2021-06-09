@@ -25,6 +25,17 @@ PUBLIC_IP=$(ifconfig eth0 | awk '/ *inet /{print $2}') MIN_PORT=30000; MAX_PORT=
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 ubuntu       latest    7e0aa2d69a15   6 weeks ago   72.7MB
 ```
+### open port on the host 
+```
+# firewall-cmd --add-port=3000/tcp --permanent
+# firewall-cmd --add-port=3001/tcp --permanent
+# firewall-cmd --add-port=3004/tcp --permanent
+# firewall-cmd --add-port=8030/tcp --permanent
+# firewall-cmd --add-port=30000-30050/udp --permanent
+# firewall-cmd --query-port=3000/tcp
+# firewall-cmd --reload
+```
+## install licode
 ### inside docker
 ```
 #apt-get update
