@@ -127,7 +127,9 @@ config.erizo.networkinterface = 'eth0'; //default value: ''
 
 ```
 ### install BasicExamples
-# ./scripts/installBasicExamples.sh 
+```
+# ./scripts/installBasicExample.sh 
+```
 ### kill process
 ```
 root     14645     1  2 10:05 pts/0    00:00:00 node nuve.js
