@@ -48,7 +48,7 @@ ubuntu       latest    7e0aa2d69a15   6 weeks ago   72.7MB
 ### 2.1 install Dependencies
 ```
 #apt-get update
-#apt-get install vim curl wget git net-tools -y
+#apt-get install vim curl wget git net-tools inetutils-ping -y
 # vi ~/.wgetrc
 proxy=http://192.168.0.163:10809
 #vi ~/.curlrc
@@ -65,7 +65,18 @@ tar --no-same-owner
 tar --no-same-owner -zxvf /sfu/licode/scripts/../build/libdeps/mongodb-linux-x86_64-ubuntu2004-4.4.4.tgz -C /sfu/licode/scripts/../build/libdeps
 
 ```
+#### delete 
+```
+ln: failed to create symbolic link '/usr/local/bin/install_compass': File exists
+ln: failed to create symbolic link '/usr/local/bin/mongo': File exists
+ln: failed to create symbolic link '/usr/local/bin/mongod': File exists
+ln: failed to create symbolic link '/usr/local/bin/mongos': File exists
 
+rm -rf /usr/local/bin/install_compass
+rm -rf /usr/local/bin/mongo
+rm -rf /usr/local/bin/mongod
+rm -rf /usr/local/bin/mongos
+```
 ### 2.2 install Licode
 ```
 #./scripts/installNuve.sh 
