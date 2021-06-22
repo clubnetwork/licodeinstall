@@ -1,9 +1,11 @@
-# licodeinstall
+# licode document
 - https://licode.readthedocs.io/en/master/from_source/
 
 - https://github.com/lynckia/licode
 
 - https://licode.readthedocs.io/en/stable/docker/
+## WebRTC debug tools
+https://blog.mozilla.org/webrtc/new-tool-debugging-webrtc/
 
 ## 1. install ubuntu in docker for development
 ### 1.1 install docker on centos 
