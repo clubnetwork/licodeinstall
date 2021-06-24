@@ -70,6 +70,8 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/liwei/.npm/_logs/2021-06-24T06_13_52_050Z-debug.log
 
 ```
+ brew install cpplint
+ 
 ## 1. install ubuntu in docker for development
 ### 1.1 install docker on centos 
 ```
