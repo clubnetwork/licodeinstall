@@ -49,7 +49,27 @@ to:
 
 #liweideMacBook-Pro:licode liwei$ ./scripts/installErizo.sh 
 ```
+### more errors
+```
+> licode-erizo-api@0.1.0 preinstall /Users/liwei/test/sfu/licode/erizoAPI
+> ./lint.sh
 
+./lint.sh: line 3: cpplint: command not found
+npm ERR! code ELIFECYCLE
+npm ERR! syscall spawn
+npm ERR! file sh
+npm ERR! errno ENOENT
+npm ERR! licode-erizo-api@0.1.0 preinstall: `./lint.sh`
+npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the licode-erizo-api@0.1.0 preinstall script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/liwei/.npm/_logs/2021-06-24T06_13_52_050Z-debug.log
+
+```
 ## 1. install ubuntu in docker for development
 ### 1.1 install docker on centos 
 ```
