@@ -8,6 +8,7 @@
 https://blog.mozilla.org/webrtc/new-tool-debugging-webrtc/
 
 ## 0. install on Mac OS
+### compile error 
 it may fail when run installErizo.sh
 
 ```
@@ -33,7 +34,7 @@ make[2]: *** [erizo/CMakeFiles/erizo.dir/DtlsTransport.cpp.o] Error 1
 make[1]: *** [erizo/CMakeFiles/erizo.dir/all] Error 2
 make: *** [all] Error 2
 ```
-### modify .h file or the compile flags
+### fix by modify the .h file or the compile flags
 https://stackoverflow.com/questions/36222912/is-c17-stdshared-mutex-not-available-yet
 
 -std=gnu++17 or -std=c++17 flag
