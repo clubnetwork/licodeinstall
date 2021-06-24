@@ -7,6 +7,48 @@
 ## WebRTC debug tools
 https://blog.mozilla.org/webrtc/new-tool-debugging-webrtc/
 
+## 0. install on Mac OS
+it may fail when run installErizo.sh
+
+```
+[ 42%] Building CXX object erizo/CMakeFiles/erizo.dir/DtlsTransport.cpp.o
+In file included from /Users/liwei/test/sfu/licode/erizo/src/erizo/DtlsTransport.cpp:5:
+In file included from /Users/liwei/test/sfu/licode/erizo/src/erizo/DtlsTransport.h:11:
+In file included from /Users/liwei/test/sfu/licode/erizo/src/erizo/dtls/DtlsSocket.h:21:
+In file included from /Users/liwei/test/sfu/licode/erizo/src/erizo/dtls/../logger.h:25:
+In file included from /usr/local/include/log4cxx/logger.h:30:
+In file included from /usr/local/include/log4cxx/helpers/appenderattachableimpl.h:27:
+In file included from /usr/local/include/log4cxx/spi/appenderattachable.h:26:
+In file included from /usr/local/include/log4cxx/logstring.h:28:
+In file included from /usr/local/include/log4cxx/log4cxx.h:45:
+/usr/local/include/log4cxx/boost-std-configuration.h:10:18: error: no type named 'shared_mutex' in namespace 'std'; did you mean 'timed_mutex'?
+    typedef std::shared_mutex shared_mutex;
+            ~~~~~^~~~~~~~~~~~
+                 timed_mutex
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/mutex:235:24: note: 'timed_mutex' declared here
+class _LIBCPP_TYPE_VIS timed_mutex
+                       ^
+1 error generated.
+make[2]: *** [erizo/CMakeFiles/erizo.dir/DtlsTransport.cpp.o] Error 1
+make[1]: *** [erizo/CMakeFiles/erizo.dir/all] Error 2
+make: *** [all] Error 2
+```
+### modify .h file or the compile flags
+https://stackoverflow.com/questions/36222912/is-c17-stdshared-mutex-not-available-yet
+
+-std=gnu++17 or -std=c++17 flag
+
+or 
+```
+#vi /usr/local/include/log4cxx/boost-std-configuration.h
+line 10 from 
+    typedef std::shared_mutex shared_mutex;
+to:    
+    typedef std::shared_timed_mutex shared_mutex;
+
+#liweideMacBook-Pro:licode liwei$ ./scripts/installErizo.sh 
+```
+
 ## 1. install ubuntu in docker for development
 ### 1.1 install docker on centos 
 ```
