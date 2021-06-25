@@ -10,6 +10,9 @@ https://www.cnblogs.com/bloglearning/p/11930199.html
 
 ## WebRTC基础知识
 - SDP
+https://datatracker.ietf.org/doc/html/draft-ietf-mmusic-msid
+
+https://webrtchacks.com/sdp-anatomy/
 
 https://segmentfault.com/a/1190000038272539
 ## WebRTC debug tools
