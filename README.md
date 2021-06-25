@@ -4,6 +4,14 @@
 - https://github.com/lynckia/licode
 
 - https://licode.readthedocs.io/en/stable/docker/
+
+## 代码分析
+https://www.cnblogs.com/bloglearning/p/11930199.html
+
+## WebRTC基础知识
+- SDP
+
+https://segmentfault.com/a/1190000038272539
 ## WebRTC debug tools
 https://blog.mozilla.org/webrtc/new-tool-debugging-webrtc/
 
