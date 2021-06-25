@@ -19,6 +19,9 @@ https://segmentfault.com/a/1190000038272539
 ## WebRTC debug tools
 https://blog.mozilla.org/webrtc/new-tool-debugging-webrtc/
 
+## ios Client
+https://github.com/ethand91/mediasoup-ios-client.git
+
 ## 0. install on Mac OS
 ### compile error 
 it may fail when run installErizo.sh
