@@ -16,6 +16,8 @@ https://datatracker.ietf.org/doc/html/draft-ietf-mmusic-msid
 https://webrtchacks.com/sdp-anatomy/
 
 https://segmentfault.com/a/1190000038272539
+
+https://tools.ietf.org/id/draft-alvestrand-rtcweb-msid-01.html
 ## WebRTC debug tools
 https://blog.mozilla.org/webrtc/new-tool-debugging-webrtc/
 
